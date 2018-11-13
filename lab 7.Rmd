@@ -9,4 +9,21 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 Hi it's BR
-l
+```{r}
+library(tidyverse)
+gc_df<-read.csv("gc_df.csv")
+View(gc_df)
+```
+
+```{r}
+get_guns<- gc_df %>% 
+  filter(gender!="NA", make_get_guns !="NA") %>% 
+  count(gender, make_get_guns) %>% 
+  spread(make_get_guns, n) %>% 
+  select(-gender)
+
+rownames(get_guns)
+
+
+```
+
