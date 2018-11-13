@@ -22,7 +22,7 @@ get_guns<- gc_df %>%
   spread(make_get_guns, n) %>% 
   select(-gender)
 
-rownames(get_guns)
+rownames(get_guns)<c("Female", "Male")
 
 
 ```
